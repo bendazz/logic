@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Discrete Mathematics - Predicate Logic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1><i class="fas fa-brain"></i> Interactive Predicate Logic</h1>
+            <p>Master the fundamentals of discrete mathematics through interactive examples and practice</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="#truth-tables" class="nav-link active">Truth Tables</a></li>
+                <li><a href="#operations" class="nav-link">Logical Operations</a></li>
+                <li><a href="#interactive" class="nav-link">Interactive Demo</a></li>
+                <li><a href="#practice" class="nav-link">Practice Problems</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Truth Tables Section -->
+        <section id="truth-tables" class="section active">
+            <h2><i class="fas fa-table"></i> Truth Tables</h2>
+            <p class="section-intro">Truth tables show all possible truth value combinations for logical propositions.</p>
+            
+            <div class="truth-table-container">
+                <h3>Basic Propositions</h3>
+                <div class="table-wrapper">
+                    <table class="truth-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>¬P (NOT P)</th>
+                                <th>¬Q (NOT Q)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                            </tr>
+                            <tr>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                            </tr>
+                            <tr>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                            </tr>
+                            <tr>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="truth-table-container">
+                <h3>Logical Operations</h3>
+                <div class="table-wrapper">
+                    <table class="truth-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>P ∧ Q (AND)</th>
+                                <th>P ∨ Q (OR)</th>
+                                <th>P ⊕ Q (XOR)</th>
+                                <th>P → Q (IMPLIES)</th>
+                                <th>P ↔ Q (IFF)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                            </tr>
+                            <tr>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                            </tr>
+                            <tr>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                                <td class="false">F</td>
+                            </tr>
+                            <tr>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="false">F</td>
+                                <td class="true">T</td>
+                                <td class="true">T</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logical Operations Section -->
+        <section id="operations" class="section">
+            <h2><i class="fas fa-cogs"></i> Logical Operations</h2>
+            <p class="section-intro">Learn about the fundamental logical operations used in predicate logic.</p>
+            
+            <div class="operations-grid">
+                <div class="operation-card">
+                    <h3><i class="fas fa-times"></i> Negation (¬)</h3>
+                    <p><strong>Definition:</strong> The negation of a proposition P is true when P is false, and false when P is true.</p>
+                    <div class="formula">¬P</div>
+                    <p><strong>Example:</strong> If P = "It is raining", then ¬P = "It is not raining"</p>
+                </div>
+
+                <div class="operation-card">
+                    <h3><i class="fas fa-link"></i> Conjunction (∧)</h3>
+                    <p><strong>Definition:</strong> A conjunction is true only when both propositions are true.</p>
+                    <div class="formula">P ∧ Q</div>
+                    <p><strong>Example:</strong> "It is sunny AND warm" is true only when both conditions are met.</p>
+                </div>
+
+                <div class="operation-card">
+                    <h3><i class="fas fa-code-branch"></i> Disjunction (∨)</h3>
+                    <p><strong>Definition:</strong> A disjunction is true when at least one proposition is true.</p>
+                    <div class="formula">P ∨ Q</div>
+                    <p><strong>Example:</strong> "I will study OR watch a movie" is true if I do either activity.</p>
+                </div>
+
+                <div class="operation-card">
+                    <h3><i class="fas fa-exchange-alt"></i> Exclusive OR (⊕)</h3>
+                    <p><strong>Definition:</strong> Exclusive OR is true when exactly one proposition is true, but not both.</p>
+                    <div class="formula">P ⊕ Q</div>
+                    <p><strong>Example:</strong> "I will have coffee XOR tea" means I'll have one or the other, but not both.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo Section -->
+        <section id="interactive" class="section">
+            <h2><i class="fas fa-play-circle"></i> Interactive Truth Table Generator</h2>
+            <p class="section-intro">Create your own truth tables by selecting propositions and operations.</p>
+            
+            <div class="interactive-container">
+                <div class="controls">
+                    <h3>Build Your Expression</h3>
+                    
+                    <!-- Simple Expression Builder -->
+                    <div class="expression-mode">
+                        <label class="radio-container">
+                            <input type="radio" name="mode" value="simple" checked> Simple Expression
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="mode" value="complex"> Complex Expression
+                        </label>
+                    </div>
+                    
+                    <div id="simpleBuilder" class="expression-builder">
+                        <select id="prop1" class="prop-select">
+                            <option value="P">P</option>
+                            <option value="Q">Q</option>
+                            <option value="R">R</option>
+                        </select>
+                        
+                        <select id="operator" class="operator-select">
+                            <option value="and">∧ (AND)</option>
+                            <option value="or">∨ (OR)</option>
+                            <option value="xor">⊕ (XOR)</option>
+                            <option value="implies">→ (IMPLIES)</option>
+                            <option value="iff">↔ (IFF)</option>
+                        </select>
+                        
+                        <select id="prop2" class="prop-select">
+                            <option value="P">P</option>
+                            <option value="Q">Q</option>
+                            <option value="R">R</option>
+                        </select>
+                        
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="negate1"> Negate first
+                        </label>
+                        
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="negate2"> Negate second
+                        </label>
+                    </div>
+                    
+                    <!-- Complex Expression Builder -->
+                    <div id="complexBuilder" class="expression-builder hidden">
+                        <div class="complex-controls">
+                            <label for="customExpression">Enter Expression:</label>
+                            <input type="text" id="customExpression" placeholder="e.g., (P ∧ Q) ∨ (¬P ∧ R)" class="expression-input">
+                            <div class="expression-help">
+                                <small>Use: P, Q, R for propositions | ∧ (and), ∨ (or), ⊕ (xor), → (implies), ↔ (iff), ¬ (not) | ( ) for grouping</small>
+                            </div>
+                        </div>
+                        
+                        <div class="preset-expressions">
+                            <h4>Preset Complex Expressions:</h4>
+                            <button class="preset-btn" data-expression="(P ∧ Q) ∨ R">(P ∧ Q) ∨ R</button>
+                            <button class="preset-btn" data-expression="¬(P ∨ Q)">(De Morgan's Law) ¬(P ∨ Q)</button>
+                            <button class="preset-btn" data-expression="(P → Q) ∧ (Q → R)">(P → Q) ∧ (Q → R)</button>
+                            <button class="preset-btn" data-expression="(P ⊕ Q) ∧ R">(P ⊕ Q) ∧ R</button>
+                            <button class="preset-btn" data-expression="¬P ∨ (Q ∧ R)">¬P ∨ (Q ∧ R)</button>
+                            <button class="preset-btn" data-expression="(P ∨ Q) ∧ (¬P ∨ R)">(P ∨ Q) ∧ (¬P ∨ R)</button>
+                        </div>
+                    </div>
+                    
+                    <button id="generateTable" class="btn btn-primary">Generate Truth Table</button>
+                    
+                    <div class="current-expression">
+                        <strong>Current Expression:</strong> <span id="expressionDisplay">P ∧ Q</span>
+                    </div>
+                </div>
+                
+                <div class="generated-table-container">
+                    <div id="generatedTable"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Problems Section -->
+        <section id="practice" class="section">
+            <h2><i class="fas fa-puzzle-piece"></i> Practice Problems</h2>
+            <p class="section-intro">Test your understanding with these interactive problems.</p>
+            
+            <div class="problems-container">
+                <div class="problem-card" data-problem="1">
+                    <h3>Problem 1: Basic Truth Table</h3>
+                    <p>Complete the truth table for the expression: <strong>¬P ∨ Q</strong></p>
+                    
+                    <table class="practice-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>¬P</th>
+                                <th>¬P ∨ Q</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="F">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="F">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="F">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="1">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="1">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-1"></div>
+                    
+                    <div class="solution hidden" id="solution-1">
+                        <h4>Solution Explanation:</h4>
+                        <p><strong>Step 1:</strong> Calculate ¬P (negation of P)</p>
+                        <ul>
+                            <li>When P = T, ¬P = F</li>
+                            <li>When P = F, ¬P = T</li>
+                        </ul>
+                        <p><strong>Step 2:</strong> Calculate ¬P ∨ Q (¬P OR Q)</p>
+                        <ul>
+                            <li>Row 1: F ∨ T = T</li>
+                            <li>Row 2: F ∨ F = F</li>
+                            <li>Row 3: T ∨ T = T</li>
+                            <li>Row 4: T ∨ F = T</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="2">
+                    <h3>Problem 2: Exclusive OR</h3>
+                    <p>Determine when the expression <strong>P ⊕ Q</strong> (P XOR Q) is true:</p>
+                    
+                    <div class="multiple-choice">
+                        <label class="choice-label">
+                            <input type="radio" name="q2" value="both-true"> When both P and Q are true
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q2" value="both-false"> When both P and Q are false
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q2" value="exactly-one" data-correct="true"> When exactly one of P or Q is true
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q2" value="at-least-one"> When at least one of P or Q is true
+                        </label>
+                    </div>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="2">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="2">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-2"></div>
+                    
+                    <div class="solution hidden" id="solution-2">
+                        <h4>Solution Explanation:</h4>
+                        <p>The exclusive OR (XOR) operation is true when exactly one of the propositions is true, but not both.</p>
+                        <p>Looking at the truth table:</p>
+                        <ul>
+                            <li>T ⊕ T = F (both true → false)</li>
+                            <li>T ⊕ F = T (exactly one true → true)</li>
+                            <li>F ⊕ T = T (exactly one true → true)</li>
+                            <li>F ⊕ F = F (both false → false)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="3">
+                    <h3>Problem 3: Complex Expression</h3>
+                    <p>Evaluate the expression <strong>(P ∧ Q) ∨ (¬P ∧ R)</strong> when P = F, Q = T, R = T:</p>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <label>Step 1: Calculate P ∧ Q = F ∧ T = </label>
+                            <select class="answer-select step-answer" data-step="1" data-correct="F">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="step">
+                            <label>Step 2: Calculate ¬P = ¬F = </label>
+                            <select class="answer-select step-answer" data-step="2" data-correct="T">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="step">
+                            <label>Step 3: Calculate ¬P ∧ R = T ∧ T = </label>
+                            <select class="answer-select step-answer" data-step="3" data-correct="T">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="step">
+                            <label>Step 4: Calculate (P ∧ Q) ∨ (¬P ∧ R) = F ∨ T = </label>
+                            <select class="answer-select step-answer" data-step="4" data-correct="T">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="3">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="3">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-3"></div>
+                    
+                    <div class="solution hidden" id="solution-3">
+                        <h4>Solution Explanation:</h4>
+                        <p>Let's evaluate step by step with P = F, Q = T, R = T:</p>
+                        <ol>
+                            <li><strong>P ∧ Q = F ∧ T = F</strong> (AND requires both to be true)</li>
+                            <li><strong>¬P = ¬F = T</strong> (negation flips the value)</li>
+                            <li><strong>¬P ∧ R = T ∧ T = T</strong> (both are true)</li>
+                            <li><strong>(P ∧ Q) ∨ (¬P ∧ R) = F ∨ T = T</strong> (OR is true if at least one operand is true)</li>
+                        </ol>
+                        <p>The final result is <strong>T (True)</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="4">
+                    <h3>Problem 4: De Morgan's Law</h3>
+                    <p>Complete the truth table to verify De Morgan's Law: <strong>¬(P ∧ Q) ≡ (¬P ∨ ¬Q)</strong></p>
+                    
+                    <table class="practice-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>P ∧ Q</th>
+                                <th>¬(P ∧ Q)</th>
+                                <th>¬P</th>
+                                <th>¬Q</th>
+                                <th>¬P ∨ ¬Q</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="F">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="F">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="4">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="4">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-4"></div>
+                    
+                    <div class="solution hidden" id="solution-4">
+                        <h4>Solution Explanation:</h4>
+                        <p><strong>De Morgan's Law</strong> states that the negation of a conjunction equals the disjunction of the negations.</p>
+                        <p>Looking at each row:</p>
+                        <ul>
+                            <li>Row 1: ¬(T ∧ T) = ¬T = F, and (¬T ∨ ¬T) = (F ∨ F) = F ✓</li>
+                            <li>Row 2: ¬(T ∧ F) = ¬F = T, and (¬T ∨ ¬F) = (F ∨ T) = T ✓</li>
+                            <li>Row 3: ¬(F ∧ T) = ¬F = T, and (¬F ∨ ¬T) = (T ∨ F) = T ✓</li>
+                            <li>Row 4: ¬(F ∧ F) = ¬F = T, and (¬F ∨ ¬F) = (T ∨ T) = T ✓</li>
+                        </ul>
+                        <p>Both expressions have identical truth values, proving they are equivalent!</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="5">
+                    <h3>Problem 5: Implication Analysis</h3>
+                    <p>Which of the following statements about implication (P → Q) is correct?</p>
+                    
+                    <div class="multiple-choice">
+                        <label class="choice-label">
+                            <input type="radio" name="q5" value="always-true"> P → Q is always true when P is true
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q5" value="false-when-p-true-q-false" data-correct="true"> P → Q is false only when P is true and Q is false
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q5" value="same-as-or"> P → Q is the same as P ∨ Q
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q5" value="always-false"> P → Q is always false when Q is false
+                        </label>
+                    </div>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="5">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="5">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-5"></div>
+                    
+                    <div class="solution hidden" id="solution-5">
+                        <h4>Solution Explanation:</h4>
+                        <p>An implication P → Q is false <strong>only</strong> when the antecedent (P) is true and the consequent (Q) is false.</p>
+                        <p>Truth table for P → Q:</p>
+                        <ul>
+                            <li>T → T = T (true premise, true conclusion)</li>
+                            <li>T → F = F (true premise, false conclusion - this is the only false case)</li>
+                            <li>F → T = T (false premise - implication is vacuously true)</li>
+                            <li>F → F = T (false premise - implication is vacuously true)</li>
+                        </ul>
+                        <p>Think of it as: "If I study hard, then I will pass the exam." This statement is only false if I study hard but don't pass.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="6">
+                    <h3>Problem 6: Three-Variable Expression</h3>
+                    <p>For the expression <strong>(P ∨ Q) ∧ (Q ∨ R)</strong>, determine the truth value when P = F, Q = F, R = T:</p>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <label>Step 1: Calculate P ∨ Q = F ∨ F = </label>
+                            <select class="answer-select step-answer" data-step="1" data-correct="F">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="step">
+                            <label>Step 2: Calculate Q ∨ R = F ∨ T = </label>
+                            <select class="answer-select step-answer" data-step="2" data-correct="T">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                        
+                        <div class="step">
+                            <label>Step 3: Calculate (P ∨ Q) ∧ (Q ∨ R) = F ∧ T = </label>
+                            <select class="answer-select step-answer" data-step="3" data-correct="F">
+                                <option value="">-</option>
+                                <option value="T">T</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="6">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="6">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-6"></div>
+                    
+                    <div class="solution hidden" id="solution-6">
+                        <h4>Solution Explanation:</h4>
+                        <p>With P = F, Q = F, R = T:</p>
+                        <ol>
+                            <li><strong>P ∨ Q = F ∨ F = F</strong> (OR needs at least one true value)</li>
+                            <li><strong>Q ∨ R = F ∨ T = T</strong> (R is true, so the OR is true)</li>
+                            <li><strong>(P ∨ Q) ∧ (Q ∨ R) = F ∧ T = F</strong> (AND needs both operands to be true)</li>
+                        </ol>
+                        <p>The final result is <strong>F (False)</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="7">
+                    <h3>Problem 7: Logical Equivalence</h3>
+                    <p>Which expression is logically equivalent to <strong>¬(P → Q)</strong>?</p>
+                    
+                    <div class="multiple-choice">
+                        <label class="choice-label">
+                            <input type="radio" name="q7" value="not-p-and-q"> ¬P ∧ Q
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q7" value="p-and-not-q" data-correct="true"> P ∧ ¬Q
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q7" value="not-p-or-not-q"> ¬P ∨ ¬Q
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="q7" value="not-p-or-q"> ¬P ∨ Q
+                        </label>
+                    </div>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="7">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="7">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-7"></div>
+                    
+                    <div class="solution hidden" id="solution-7">
+                        <h4>Solution Explanation:</h4>
+                        <p>To find ¬(P → Q), we need to understand when P → Q is false.</p>
+                        <p>P → Q is false only when P is true and Q is false (T → F = F).</p>
+                        <p>Therefore, ¬(P → Q) is true only when P is true and Q is false.</p>
+                        <p>This matches the expression <strong>P ∧ ¬Q</strong>:</p>
+                        <ul>
+                            <li>When P = T and Q = F: P ∧ ¬Q = T ∧ T = T ✓</li>
+                            <li>For all other cases: P ∧ ¬Q = F ✓</li>
+                        </ul>
+                        <p>So ¬(P → Q) ≡ P ∧ ¬Q</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="8">
+                    <h3>Problem 8: Complex Truth Table Challenge</h3>
+                    <p>Complete the truth table for: <strong>((P ∧ Q) → R) ↔ (P → (Q → R))</strong></p>
+                    <p><em>This demonstrates the exportation law in logic!</em></p>
+                    
+                    <table class="practice-table complex-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>R</th>
+                                <th>P ∧ Q</th>
+                                <th>(P ∧ Q) → R</th>
+                                <th>Q → R</th>
+                                <th>P → (Q → R)</th>
+                                <th>Final Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="8">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="8">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-8"></div>
+                    
+                    <div class="solution hidden" id="solution-8">
+                        <h4>Solution Explanation:</h4>
+                        <p><strong>Exportation Law:</strong> (P ∧ Q) → R ≡ P → (Q → R)</p>
+                        <p>This law shows that "if both P and Q, then R" is equivalent to "if P, then (if Q, then R)".</p>
+                        <p>Since both expressions are equivalent, the biconditional (↔) between them is always true!</p>
+                        <p>The final result column should be all T's, demonstrating that this is a <strong>tautology</strong> - a statement that is always true regardless of the truth values of its components.</p>
+                        <p>This is a fundamental law in logic that allows us to transform conditional statements.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="9">
+                    <h3>Problem 9: Distributive Law Challenge</h3>
+                    <p>Complete the truth table for: <strong>P ∧ (Q ∨ R) ≡ (P ∧ Q) ∨ (P ∧ R)</strong></p>
+                    <p><em>This demonstrates the distributive law for conjunction over disjunction!</em></p>
+                    
+                    <table class="practice-table complex-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>R</th>
+                                <th>Q ∨ R</th>
+                                <th>P ∧ (Q ∨ R)</th>
+                                <th>P ∧ Q</th>
+                                <th>P ∧ R</th>
+                                <th>(P ∧ Q) ∨ (P ∧ R)</th>
+                                <th>Equivalence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="9">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="9">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-9"></div>
+                    
+                    <div class="solution hidden" id="solution-9">
+                        <h4>Solution Explanation:</h4>
+                        <p><strong>Distributive Law:</strong> P ∧ (Q ∨ R) ≡ (P ∧ Q) ∨ (P ∧ R)</p>
+                        <p>This law shows that conjunction distributes over disjunction, similar to how multiplication distributes over addition in arithmetic.</p>
+                        <p>Since both expressions are logically equivalent, they always have the same truth value, making the equivalence always true (tautology).</p>
+                        <p>This is fundamental in simplifying complex logical expressions and circuit design.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="10">
+                    <h3>Problem 10: Contrapositive Law</h3>
+                    <p>Complete the truth table for: <strong>(P → Q) ≡ (¬Q → ¬P)</strong></p>
+                    <p><em>This demonstrates that an implication is equivalent to its contrapositive!</em></p>
+                    
+                    <table class="practice-table complex-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>P → Q</th>
+                                <th>¬Q</th>
+                                <th>¬P</th>
+                                <th>¬Q → ¬P</th>
+                                <th>Equivalence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="10">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="10">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-10"></div>
+                    
+                    <div class="solution hidden" id="solution-10">
+                        <h4>Solution Explanation:</h4>
+                        <p><strong>Contrapositive Law:</strong> (P → Q) ≡ (¬Q → ¬P)</p>
+                        <p>The contrapositive of an implication is logically equivalent to the original statement.</p>
+                        <p>Examples:</p>
+                        <ul>
+                            <li>Original: "If it rains, then the ground gets wet"</li>
+                            <li>Contrapositive: "If the ground is not wet, then it did not rain"</li>
+                        </ul>
+                        <p>This is extremely useful in mathematical proofs - you can prove P → Q by proving ¬Q → ¬P instead!</p>
+                    </div>
+                </div>
+
+                <div class="problem-card" data-problem="11">
+                    <h3>Problem 11: Absorption Law Master Challenge</h3>
+                    <p>Complete the truth table for: <strong>P ∨ (P ∧ Q) ≡ P</strong> and <strong>P ∧ (P ∨ Q) ≡ P</strong></p>
+                    <p><em>This demonstrates the absorption laws - a cornerstone of Boolean algebra!</em></p>
+                    
+                    <table class="practice-table complex-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>P ∧ Q</th>
+                                <th>P ∨ (P ∧ Q)</th>
+                                <th>P ∨ Q</th>
+                                <th>P ∧ (P ∨ Q)</th>
+                                <th>First Law (P ∨ (P ∧ Q) ≡ P)</th>
+                                <th>Second Law (P ∧ (P ∨ Q) ≡ P)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td>T</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                                <td class="fill-blank">
+                                    <select class="answer-select" data-correct="T">
+                                        <option value="">-</option>
+                                        <option value="T">T</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="problem-actions">
+                        <button class="btn btn-secondary check-answer" data-problem="11">Check Answer</button>
+                        <button class="btn btn-outline show-solution" data-problem="11">Show Solution</button>
+                    </div>
+                    
+                    <div class="feedback" id="feedback-11"></div>
+                    
+                    <div class="solution hidden" id="solution-11">
+                        <h4>Solution Explanation:</h4>
+                        <p><strong>Absorption Laws:</strong></p>
+                        <ul>
+                            <li><strong>First Law:</strong> P ∨ (P ∧ Q) ≡ P</li>
+                            <li><strong>Second Law:</strong> P ∧ (P ∨ Q) ≡ P</li>
+                        </ul>
+                        <p>These laws show that certain complex expressions can be "absorbed" and simplified:</p>
+                        <ul>
+                            <li>When P is true, P ∨ (anything) = P, and P ∧ (anything involving P) = P</li>
+                            <li>When P is false, P ∨ (P ∧ Q) = F ∨ F = F = P, and P ∧ (P ∨ Q) = F ∧ (anything) = F = P</li>
+                        </ul>
+                        <p>These are crucial for simplifying logical circuits and expressions in computer science and digital design!</p>
+                        <p>Both equivalences are tautologies (always true), demonstrating the power of absorption in logical simplification.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Interactive Discrete Mathematics. Created for educational purposes.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
